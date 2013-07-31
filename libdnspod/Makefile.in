@@ -1,0 +1,12 @@
+SRC_DIR=src
+DEST_DIR=lib
+INCLUDE_DIR=include
+
+all: libdnspod.a
+
+libdnspod.a: libdnspod.o
+	ar r $(DEST_DIR)/$@ $(DEST_DIR)/libdnspod.o
+
+libdnspod.o:
+	g++ -o $(DEST_DIR)/$@ -c $(SRC_DIR)/dnspod.cpp
+	
